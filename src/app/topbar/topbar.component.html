@@ -34,24 +34,39 @@
     </div>
   
     <ng-template #demoModal let-modal>
-      <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-          (click)="modal.dismiss('Cross click')"></button>
-      </div>
       <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="dateOfBirth">Date of birth</label>
-            <div class="input-group">
-              <input id="dateOfBirth" name="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" ngbDatepicker
-                #dp="ngbDatepicker">
-              <button type="button" class="btn btn-outline-secondary bi bi-calendar" (click)="dp.toggle()"></button>
-            </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" (click)="modal.dismiss('Cross click')"></button>
+        <div class="m-3">
+          <img class="rounded mx-auto d-block perfi_usuario" src='../../favicon.ico'/>
+          <h5 class="text-center m-2">Nome da pessoa/empresa</h5>
+        </div>
+        <div class="form-group mt-3">
+          <label for="documento">CPF/CNPJ</label>
+          <div class="input-group">
+            <input id="documento" name="documento" class="form-control" value="111.111.111-11" disabled>
           </div>
-        </form>
+        </div>
+        <div class="form-group mt-3">
+          <label for="cep">CEP</label>
+          <div class="input-group">
+            <input id="cep" name="cep" class="form-control" value="111.111.111-11" disabled>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <label for="data_nascimento">Data de Nascimento/Criação</label>
+          <div class="input-group">
+            <input id="data_nascimento" name="data_nascimento" class="form-control" value="24/11/2022" disabled>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+        <div class="row">
+          <div class="col text-left">
+            <button type="button" class="btn btn-outline-danger" (click)="modal.close('Sair')">Sair</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-outline-success" (click)="modal.close('Editar')">Editar</button>
+          </div>
+        </div>
       </div>
     </ng-template>
