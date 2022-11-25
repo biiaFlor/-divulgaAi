@@ -1,0 +1,60 @@
+.card_login {
+  height: 400px;
+  width: 350px;
+  margin-top: 8rem;
+  margin-bottom: auto;
+  background: #ea823a;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+.logo {
+  position: absolute;
+  height: 170px;
+  width: 170px;
+  top: -75px;
+  border-radius: 50%;
+  background: #007cde;
+  padding: 10px;
+  text-align: center;
+}
+
+.img_logo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.card_form {
+  margin-top: 2rem;
+}
+
+.btn_login {
+  width: 100%;
+  background: #007cde !important;
+  color: white !important;
+  margin-top: 0.5rem;
+}
+
+.btn_login:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+
+.card_btn_login {
+  padding: 0 2rem;
+}
+
+.input_documento,
+.input_senha:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}

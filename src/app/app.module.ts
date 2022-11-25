@@ -11,6 +11,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { CompanyComponent } from './company/company.component';
 import { ProductComponent } from './product/product.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ExploreProductsComponent,
     TopbarComponent,
     CompanyComponent,
-    ProductComponent
+    ProductComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

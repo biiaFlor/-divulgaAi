@@ -3,8 +3,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './topbar/topbar.component.html',
-  styleUrls: ['./topbar/topbar.component.scss']
+  templateUrl: './login/login.component.html',
+  styleUrls: ['./login/login.component.scss']
 })
 
 export class AppComponent {
