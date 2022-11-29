@@ -1,0 +1,45 @@
+<div class="card_register">
+  <form>
+    <div class="form-row">
+      <div class="form-group">
+        <!-- se for empresa -->
+        <label for="documento">CNPJ*</label>
+        <!-- se for pessoa 
+        <label for="documento">CPF*</label>-->
+        <input type="documento" class="form-control" id="documento" placeholder="Ex.: 000.000.000-00">
+      </div>
+      <div class="form-group">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="empresa">
+          <label class="form-check-label" for="empresa">Empresa?</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <!-- se for empresa -->
+      <label for="nome">Razão Social*</label>
+      <!-- se for pessoa 
+      <label for="nome">Nome Completo*</label>-->
+      <input type="text" class="form-control" id="nome" placeholder="">
+    </div>
+    <div class="form-group">
+      <!-- se for empresa -->
+      <label for="data">Data de Criação</label>
+      <!-- se for pessoa 
+      <label for="data">Data de Nascimento</label>-->
+      <input type="date" class="form-control" id="data" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="cep">CEP</label>
+      <input type="text" class="form-control" id="cep" placeholder="00000-000">
+    </div>
+    <div class="form-group">
+      <label for="logo">Adicione aqui a logo da sua empresa</label>
+      <br/>
+      <input type="file" class="form-control-file mt-2" id="logo">
+    </div>
+    <div class="form-group mt-3 text-center">
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+  </form>
+</div>
