@@ -4,9 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { SearchComponent } from './search/search.component';
-import { ExploreCompaniesComponent } from './explore-companies/explore-companies.component';
-import { ExploreProductsComponent } from './explore-products/explore-products.component';
+import { ExploreComponent } from './explore/explore.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { CompanyComponent } from './company/company.component';
 import { ProductComponent } from './product/product.component';
@@ -18,14 +16,13 @@ import { RegisterComponent } from './register/register.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchComponent,
-    ExploreCompaniesComponent,
-    ExploreProductsComponent,
+    ExploreComponent,
     TopbarComponent,
     CompanyComponent,
     ProductComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ExploreComponent
   ],
   imports: [
     BrowserModule,
