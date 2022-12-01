@@ -11,6 +11,8 @@ import { ProductComponent } from './product/product.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ShowCompanyComponent } from './company/show-company/show-company.component';
+import { ShowProductComponent } from './product/show-product/show-product.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RegisterComponent } from './register/register.component';
     ProductComponent,
     LoginComponent,
     RegisterComponent,
-    ExploreComponent
+    ExploreComponent,
+    ShowCompanyComponent,
+    ShowProductComponent
   ],
   imports: [
     BrowserModule,
