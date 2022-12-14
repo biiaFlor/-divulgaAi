@@ -13,6 +13,12 @@ import { ProductComponent } from './product/product.component';
 import { RegisterComponent } from './register/register.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { FormProductComponent } from './product/form-product/form-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { NgxMaskModule } from 'ngx-mask';
+import { HttpClientModule } from '@angular/common/http';
+import { CadProductComponent } from './cad-product/cad-product.component';
+import { MyProductsComponent } from './my-products/my-products.component'
 
 @NgModule({
   declarations: [
@@ -26,12 +32,18 @@ import { FormProductComponent } from './product/form-product/form-product.compon
     RegisterComponent,
     ExploreComponent,
     ShowCompanyComponent,
-    FormProductComponent
+    FormProductComponent,
+    CadProductComponent,
+    MyProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    ReactiveFormsModule,
+    RouterModule,
+    NgxMaskModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

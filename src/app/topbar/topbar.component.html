@@ -1,8 +1,6 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-light bg-light w-100">
     <div class="container-fluid">
-      <a class="navbar-brand m-4" href="#">
-        <img src='../../assets/images/logo-2partes.pngs'/>
-      </a>
+        <img src='../../assets/images/logo.png' style="max-height: 100px; cursor: pointer;" routerLink="/home"/>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -18,11 +16,23 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/all_products">Produtos</a>
           </li>
+          <li *ngIf="!authService.isLogged()" class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+          <li *ngIf="!authService.isLogged()" class="nav-item">
+            <a class="nav-link" routerLink="/register">Cadastre-se</a>
+          </li>
+          <li *ngIf="authService.isLogged() && tokenService.getUser()?.is_company" class="nav-item">
+            <a class="nav-link" routerLink="/product">Cadastrar produto</a>
+          </li>
+          <li *ngIf="authService.isLogged() && tokenService.getUser()?.is_company" class="nav-item">
+            <a class="nav-link" routerLink="/product/mine">Meus produtos</a>
+          </li>
         </ul>
       </div>
     </div>
   
-    <div class="row">
+    <div *ngIf="authService.isLogged()" class="row m-0 p-0">
       <div class="col">
         <button class="btn btn-lg ml-4 mr-4" (click)="open(demoModal)">
             <i size="5" class="bi bi-person-circle"></i>
@@ -35,34 +45,34 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" (click)="modal.dismiss('Cross click')"></button>
         <div class="m-3">
           <img class="rounded mx-auto d-block perfi_usuario" src='../../favicon.ico'/>
-          <h5 class="text-center m-2">Nome da pessoa/empresa</h5>
+          <h5 class="text-center m-2">{{tokenService.getUser()?.name}}</h5>
         </div>
         <div class="form-group mt-3">
-          <label for="documento">CPF/CNPJ</label>
+          <label for="documento">{{!tokenService.getUser()?.is_company ? 'CPF' : 'CNPJ' }}</label>
           <div class="input-group">
-            <input id="documento" name="documento" class="form-control" value="111.111.111-11" disabled>
+            <input id="documento" name="documento" class="form-control" [value]="tokenService.getUser()?.document" disabled>
           </div>
         </div>
         <div class="form-group mt-3">
           <label for="cep">CEP</label>
           <div class="input-group">
-            <input id="cep" name="cep" class="form-control" value="111.111.111-11" disabled>
+            <input id="cep" name="cep" class="form-control" [value]="tokenService.getUser()?.cep" disabled>
           </div>
         </div>
         <div class="form-group mt-3">
-          <label for="data_nascimento">Data de Nascimento/Criação</label>
+          <label for="data_nascimento">Data de {{!tokenService.getUser()?.is_company ? 'Nascimento' : 'Criação' }}</label>
           <div class="input-group">
-            <input id="data_nascimento" name="data_nascimento" class="form-control" value="24/11/2022" disabled>
+            <input id="data_nascimento" name="data_nascimento" class="form-control" [value]="tokenService.getUser()?.date" disabled>
           </div>
         </div>
       </div>
       <div class="modal-footer">
         <div class="row">
           <div class="col text-left">
-            <button type="button" class="btn btn-outline-danger" (click)="modal.close('Sair')" routerLink="/login">Sair</button>
+            <button type="button" class="btn btn-outline-danger" (click)="authService.logout(); modal.close('Sair')" routerLink="/login">Sair</button>
           </div>
           <div class="col">
-            <button type="button" class="btn btn-outline-success" (click)="modal.close('Sair')" routerLink="/edit_profile">Editar</button>
+            <button type="button" class="btn btn-outline-success" (click)="modal.close('Sair')" routerLink="/register/edit">Editar</button>
           </div>
         </div>
       </div>
