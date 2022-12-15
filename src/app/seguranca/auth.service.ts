@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   getAllCompanies() {
-    return this.http.get(environment.url + '/user/all-companies');
+    return this.http.get(environment.url + '/user/all/companies');
   }
 
   login(userLogin: any) {

@@ -1,5 +1,9 @@
 <h5 class="title"> Explore Empresas</h5>
 <ng-container *ngFor="let empresa of empresas">
     <app-explore [empresa]="empresa"></app-explore>
-    <hr/>
 </ng-container>
+
+<hr/>
+
+<h5 class="title"> Explore Produtos</h5>
+<app-my-products [produtos]="produtos"></app-my-products>

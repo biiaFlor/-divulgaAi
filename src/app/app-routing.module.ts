@@ -23,7 +23,7 @@ import { TokenInterceptor } from './seguranca/token.interceptor';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
-  { path: 'home', component: HomeComponent, resolve: { empresas: AllCompaniesResolver } },
+  { path: 'home', component: HomeComponent, resolve: { empresas: AllCompaniesResolver, produtos: AllProductsResolver } },
   { path: 'register', component: RegisterComponent, canActivate: [LoginGuard] },
   { path: 'register/edit', component: RegisterComponent, canActivate: [AuthGuard] },
   { path: 'company', component: CompanyComponent, canActivate: [AuthGuard]  },

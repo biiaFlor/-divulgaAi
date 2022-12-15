@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,7 +10,9 @@ export class MyProductsComponent implements OnInit {
 
   constructor(private actRoute: ActivatedRoute) { }
 
+  @Input()
   produtos = [] as any[];
+
   categorias = [] as any[];
 
   ngOnInit(): void {

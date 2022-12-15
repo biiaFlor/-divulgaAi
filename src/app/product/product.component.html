@@ -1,14 +1,24 @@
-  <ng-container *ngFor="let prodCat of produtosCategoria">
-    <div class="card-product">
-      <h5 class="title"> {{ prodCat[0] }} </h5>
-      <div class="card" *ngFor="let produto of prodCat[1]">
-              <img src="" class="card-img-top" alt="Imagem do Produto">
-              <div class="card-body">
-                <h5 class="card-title">{{produto.name}}</h5>
-                <p class="card-text">{{produto.description}}</p>
-                <p class="card-text">{{produto.value | currency}}</p>
-                <a [routerLink]="['/product', produto.id]" class="btn btn-primary">Ver mais</a>
-              </div>
+<ng-container *ngFor="let prodCat of produtosCategoria">
+  <div class="card-product">
+    <h5 class="title"> {{ prodCat[0] }} </h5>
+    <div id="carouselCompanies" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active d-flex">
+          <div class="card" *ngFor="let produto of prodCat[1]">
+            <div class="card-body">
+              <h5 class="card-title">{{produto.name}}</h5>
+              <p class="card-text">{{produto.description}}</p>
+              <p class="card-text">{{produto.value | currency}}</p>
             </div>
           </div>
-    </ng-container>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselCompanies" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselCompanies" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</ng-container>
