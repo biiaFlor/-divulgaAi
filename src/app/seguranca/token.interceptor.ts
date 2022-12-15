@@ -18,7 +18,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    if(request.url.includes('viacep')) {
+    if(request.url.includes('viacep') || request.url.includes('/all-companies')) {
       return next.handle(request);
     } 
 

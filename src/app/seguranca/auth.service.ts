@@ -21,12 +21,20 @@ export class AuthService {
       }));
   }
 
+  getUser(id: number) {
+    return this.http.get(environment.url + '/user/' + id);
+  }
+
   update(userObj: any) {
     return this.http
       .put(environment.url + '/user/' + this.tokenService.getUser().id, userObj)
       .pipe(tap((ret: any) => {
         this.tokenService.setUser({...this.tokenService.getUser(),  ...userObj});
       }));
+  }
+
+  getAllCompanies() {
+    return this.http.get(environment.url + '/user/all-companies');
   }
 
   login(userLogin: any) {

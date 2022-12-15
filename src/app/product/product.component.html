@@ -1,14 +1,14 @@
-<ng-container *ngFor="let produto of produtos">
-<div class="card-product">
-  <h5 class="title"> {{ produto.category_id }} </h5>
-        <div class="card">
-          <img src="" class="card-img-top" alt="Imagem do Produto">
-          <div class="card-body">
-            <h5 class="card-title">{{produto.name}}</h5>
-            <p class="card-text">{{produto.description}}</p>
-            <p class="card-text">{{produto.value | currency}}</p>
-            <a [routerLink]="['/product', produto.id]" class="btn btn-primary">Ver mais</a>
+  <ng-container *ngFor="let prodCat of produtosCategoria">
+    <div class="card-product">
+      <h5 class="title"> {{ prodCat[0] }} </h5>
+      <div class="card" *ngFor="let produto of prodCat[1]">
+              <img src="" class="card-img-top" alt="Imagem do Produto">
+              <div class="card-body">
+                <h5 class="card-title">{{produto.name}}</h5>
+                <p class="card-text">{{produto.description}}</p>
+                <p class="card-text">{{produto.value | currency}}</p>
+                <a [routerLink]="['/product', produto.id]" class="btn btn-primary">Ver mais</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-</ng-container>
+    </ng-container>

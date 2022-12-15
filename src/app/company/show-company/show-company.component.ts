@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/seguranca/auth.service';
 
 @Component({
   selector: 'app-show-company',
@@ -7,9 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowCompanyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private actRoute: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
-  ngOnInit(): void {
+  id = 0;
+
+  empresas = [] as any[];
+
+  empresa = {} as any;
+
+  ngOnInit(): void { 
+
+    
+    this.id = this.actRoute.snapshot.params['id'];
+    
+    if(this.id) {
+      this.empresas = this.actRoute.snapshot.data['empresas'];
+      this.authService.getUser(this.id).subscribe(emp => {
+        this.empresa = emp;
+      });
+
+      this.actRoute.params.subscribe(params => {
+        this.authService.getUser(params['id']).subscribe(emp => {
+          this.empresa = emp;
+        });
+      });
+
+    } else {
+      this.router.navigate(['/home']);
+    }
+
   }
 
 }

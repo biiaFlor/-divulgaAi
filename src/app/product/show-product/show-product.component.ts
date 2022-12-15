@@ -23,6 +23,7 @@ export class ShowProductComponent implements OnInit {
 
       this.productService.getById(this.id).subscribe(prod => {
         this.produto = prod;
+        console.log(prod)
       });
 
     } else {

@@ -2,9 +2,12 @@
   <div>
     <div class="m-3">
       <img class="rounded mx-auto d-block" src='../../../favicon.ico'/>
-      <h4 class="text-center m-2">Nome da Empresa</h4>
-      <h5 class="text-center m-2">Descrição</h5>
+      <h4 class="text-center m-2">{{empresa.name}}</h4>
+      <h5 class="text-center m-2">{{empresa.description}}</h5>
     </div>
   </div>
-  <app-explore></app-explore>
+  <p class="fs-1">Explore empresas</p>
+  <ng-container *ngFor="let empresa of empresas">
+    <app-explore [empresa]="empresa"></app-explore>
+  </ng-container>
 </div>

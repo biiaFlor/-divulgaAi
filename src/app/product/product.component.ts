@@ -13,16 +13,21 @@ export class ProductComponent implements OnInit {
   produtos = [] as any[];
   categorias = [] as any[];
 
+  produtosCategoria = {} as any;
+
   ngOnInit(): void {
 
     this.produtos = this.actRoute.snapshot.data['produtos'];
     this.categorias = this.actRoute.snapshot.data['categorias'];
 
-    this.produtos = this.produtos.map(prod => {
-      const cat = this.categorias.find(c => c.id == prod.category_id);
-      return {...prod, category_id: cat.description}
+    this.produtos.forEach(prod => {
+      this.produtosCategoria[prod.category] = (this.produtosCategoria[prod.category]?.length) ? [...this.produtosCategoria[prod.category], prod] : [prod];
     });
 
+    this.produtosCategoria = Object.entries(this.produtosCategoria);
+
+    console.log(this.produtosCategoria);
+    
 
   }
 
