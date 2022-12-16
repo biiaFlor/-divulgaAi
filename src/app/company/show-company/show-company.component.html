@@ -6,8 +6,20 @@
       <h5 class="text-center m-2">{{empresa.description}}</h5>
     </div>
   </div>
-  <p class="fs-1">Explore empresas</p>
-  <ng-container *ngFor="let empresa of empresas">
-    <app-explore [empresa]="empresa"></app-explore>
-  </ng-container>
+  <p class="fs-1">Explore produtos da empresa</p>
+  <div class="card-product" style="width: 400;">
+    <div>
+      <div class="">
+        <div class="active d-flex">
+          <div class="card" *ngFor="let produto of empresas">
+            <div class="card-body">
+              <h5 class="card-title">{{produto.name}}</h5>
+              <p class="card-text">{{produto.description}}</p>
+              <p class="card-text">{{produto.value | currency}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

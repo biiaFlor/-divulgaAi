@@ -5,6 +5,7 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { TokenService } from '../seguranca/token.service';
 import { ProductService } from '../services/product.service';
 
 @Injectable({
@@ -12,9 +13,9 @@ import { ProductService } from '../services/product.service';
 })
 export class MyProductsResolver implements Resolve<any> {
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private tokenService: TokenService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    return this.productService.allUser();
+    return this.productService.allUser(this.tokenService.getUser().id);
   }
 }

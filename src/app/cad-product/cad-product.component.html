@@ -22,6 +22,7 @@
         <input type="number" class="form-control" id="value" formControlName="value">
       </div>
       <div class="form-group mt-3 text-center">
+        <button *ngIf="isEdit" (click)="onClickExcluir()" type="submit" class="mx-2 btn btn-primary">Excluir</button>
         <button (click)="onClickSalvar()" type="submit" class="btn btn-primary">Salvar</button>
       </div>
     </form>

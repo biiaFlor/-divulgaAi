@@ -67,7 +67,7 @@
     <div [ngClass]="{'form-group':true, 'invisible': !isPessoaJuridica}">
       <label for="description">Descrição da Empresa</label>
       <br/>
-      <textarea class="form-control" id="description" rows="3"></textarea>
+      <textarea class="form-control" id="description" rows="3" formControlName="description"></textarea>
     </div>
     <div class="form-group d-flex justify-content-center" *ngIf="!formEdit">
       Já possui cadastro? <a class="mx-2" routerLink="/login">Clique aqui</a>
